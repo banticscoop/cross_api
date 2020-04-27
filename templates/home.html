@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>COVID-19 Info</h2>
+  <p>Your ip address is <strong>{{ name }}</strong>, and you are probably in <strong>{{ population }}</strong> right now.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Pais</th>
+                <th>Codigo</th>
+                <th>Pob Millones</th>
+                <th>Muertes</th>
+                <th>M.P.M.</th>
+                <th>Confirmados</th>
+                <th>C.P.M.</th>
+                <th>Recuperados</th>
+                <th>R.P.M.</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pais in datosPaises %}
+            <tr>
+                <td>{{ pais.name }}</td>
+                <td>{{ pais.code }}</td>
+                <td>{{ pais.population_millions }}</td>
+                <td>{{ pais.latest_data.deaths }}</td>
+                <td>{{ pais.deaths_per_million }}</td>
+                <td>{{ pais.latest_data.confirmed }}</td>
+                <td>{{ pais.confirmed_per_million }}</td>
+                <td>{{ pais.latest_data.recovered }}</td>
+                <td>{{ pais.recovered_per_million }}</td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Long+Cang|Open+Sans+Condensed:300|Pacifico|Roboto|Roboto+Condensed|Raleway:300,400&display=swap" rel="stylesheet">
+    <title>CrossApi By Bantics Coop</title>
+
+    {% block css %}{% endblock %}
+
+</head>
+
+
+<body class="app header-fixed sidebar-lg-show sidebar-fixed">
+<header class="app-header navbar shadow-sm">
+</header>
+
+{% block content %}
+{% endblock %}
+
+
+<footer class="app-footer">
+    <small>
+        <a target="_blank" href="https://bantics.com.ar">Bantics Cooperativa</a>
+    </small>
+
+</footer>
+
+<ul id="server_messages" style="display:none;">
+    {% if messages %}
+        {% for message in messages %}
+            <li data-tags="{{ message.tags }}">{{ message|safe }}</li>
+        {% endfor %}
+    {% endif %}
+</ul>
+
+</body>
+
+
+{% block js %}
+{% endblock %}
+
+<script>
+
+</script>
+
+</html>
